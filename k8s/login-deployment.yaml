@@ -4,8 +4,6 @@ metadata:
   name: login-service
 spec:
   replicas: 2
-  strategy:
-    type: RollingUpdate
   selector:
     matchLabels:
       app: login-service
@@ -16,7 +14,7 @@ spec:
     spec:
       containers:
         - name: login-service
-          image: yourdockerhub/login-service:latest
+          image: rajeevreddy1511/login-service:1.0
           ports:
             - containerPort: 9090
 
