@@ -4,8 +4,7 @@ metadata:
   name: login-ingress
 spec:
   rules:
-    - host: login.local
-      http:
+    - http:
         paths:
           - path: /
             pathType: Prefix
