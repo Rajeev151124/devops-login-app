@@ -18,7 +18,7 @@ pipeline {
         stage('Build Login Service') {
             steps {
                 dir('login-service') {
-                    sh 'mvn clean package'
+                    sh '/opt/maven/bin/mvn clean package'
                 }
             }
         }
@@ -26,7 +26,7 @@ pipeline {
         stage('Build API Gateway') {
             steps {
                 dir('api-gateway') {
-                    sh 'mvn clean package'
+                    sh '/opt/maven/bin/mvn clean package'
                 }
             }
         }

@@ -22,4 +22,3 @@ spec:
               value: root
             - name: MYSQL_DATABASE
               value: logindb
-
