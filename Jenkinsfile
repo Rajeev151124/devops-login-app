@@ -52,7 +52,12 @@ pipeline {
 
         stage('Deploy to K3s') {
             steps {
-                sh 'kubectl apply -f k8s/'
+                sh """
+                kubectl set image deployment/login-service login-service=$DOCKERHUB_USER/login-service:${BUILD_NUMBER}
+                kubectl set image deployment/api-gateway api-gateway=$DOCKERHUB_USER/api-gateway:${BUILD_NUMBER}
+                kubectl rollout status deployment/login-service
+                kubectl rollout status deployment/api-gateway
+                """
             }
         }
     }
